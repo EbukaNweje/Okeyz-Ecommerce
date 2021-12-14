@@ -42,7 +42,8 @@ const Search = styled.div`
    outline: none;
    border: none;
    font-size: 18px;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   background-color: transparent;
  }
 `
 const Nav = styled(NavLink)`

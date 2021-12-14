@@ -1,26 +1,111 @@
 import React from 'react'
 import styled from 'styled-components'
+import Slider from "./Slider"
+import Slid1 from "../img/1.jpeg"
+import Slid2 from "../img/2.jpeg"
+import Slid3 from "../img/3.jpeg"
+import Slid4 from "../img/4.jpeg"
+import Slid5 from "../img/5.jpeg"
+import Slid6 from "../img/6.jpeg"
 
 const HomeScreen = () => {
     return (
         <Container>
             <Wrapper>
-                SITE ON PROGRESS
+                <TopBAnner>
+                  <LeftSide>
+                    <LinkeBanner src={Slid4}/>
+                    <LinkeBanner src={Slid6}/>
+                    <LinkeBanner src={Slid1}/>
+                    <LinkeBanner src={Slid2}/>
+
+                  </LeftSide>
+                  <RightSide>
+                    <Slider/>
+                  </RightSide>
+                </TopBAnner>
             </Wrapper>
         </Container>
     )
 }
 
 export default HomeScreen
+const RightSide = styled.div`
+  width: 65%;
+  height: 65%;
+  background-color: #fff;
+
+  @media screen and (max-width: 500px) {
+    height: 60%;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+`
+const LinkeBanner = styled.img`
+    width: 70%;
+    height: 100px;
+    border-radius: 10px;
+    border: 3px solid gray;
+    color: black;
+    transition: all 350ms;
+    transform: scale(1);
+    background-color: gray;
+    margin: 20px 0px;
+    object-fit: cover;
+
+  :hover{
+    transform: scale(1.09);
+  }
+
+  @media screen and (max-width: 500px) {
+  width: 30%;
+  margin: 10px 0px 0px 0px;
+  height: 80px;
+  }
+`
+const LeftSide = styled.div`
+  width: 25%;
+  height: 100%;
+  display: flex;
+  margin: 0px 0px 0px 30px;
+  flex-direction: column;
+  /* color: white; */ 
+  
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 30%;
+    margin: 0px 0px 0px 0px;
+    /* background-color: black; */
+  }
+`
+const TopBAnner = styled.div`
+  width: 100%;
+  height: 90vh;
+  background-color: #F6F9FC;
+  display: flex;
+  align-items: center;
+  /* color: white; */
+
+  @media screen and (max-width: 500px) {
+    display: flex;  
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+  }
+`
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* padding-top: 100px; */
+  padding-top: 100px;
   font-size: 50px;
   font-weight: bolder;
+  color: black;
 
   @media screen and (max-width: 500px) {
     display: flex;
@@ -28,6 +113,7 @@ const Wrapper = styled.div`
     text-align: center;
     width: 100%;
     height: 100vh;
+    padding-top: 80px;
   }
 `;
 
@@ -36,7 +122,6 @@ const Container = styled.div`
   height: 100%;
   min-height: 500px;
   /* background-color: #fef6ee; */
-  color: #004080;
 
   @media screen and (max-width: 500px) {
     min-height: 500px;

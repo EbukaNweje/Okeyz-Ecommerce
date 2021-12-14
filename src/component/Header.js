@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
 import SideBar from "./SideBar";
 import { NavLink } from "react-router-dom";
+import { FiSearch } from "react-icons/fi";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
@@ -28,6 +29,17 @@ const Header = () => {
             </NavBar>
 
             <RightSide>
+            <Search>
+              <SearchIcon/>
+                <input type="text" placeholder="Search for products"/>
+            </Search>
+                {/* <FaRegUser/> */}
+                <Cart>
+                    <MainBox>
+                        <Box>1</Box>
+                    <AiOutlineShoppingCart/>
+                    </MainBox>
+                </Cart>
                 <SignUp>Sign Up</SignUp>
                 <LogIn>LogIn</LogIn>
             </RightSide>
@@ -71,6 +83,30 @@ const Header = () => {
 }
 
 export default Header
+const SearchIcon = styled(FiSearch)`
+  margin: 0px 10px;
+`
+const Search = styled.div`
+ color: black;
+ align-items: center;
+ display: flex;
+ width: 100%;
+ height: 35px;
+ margin-right: 60px;
+ /* margin: 30px 0px 20px 20px; */
+ /* background-color: gray; */
+ border: 1px solid gray;
+
+ input{
+   width: 80%;
+   height: 70%;
+   outline: none;
+   background-color: transparent;
+   border: none;
+   font-size: 18px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+ }
+`
 const MainBox = styled.div`
     width: 75px;
     height: 75px;
@@ -143,12 +179,12 @@ const Icon = styled.div`
     }
 `
 const LogIn = styled.div`
-    width: 90px;
+    width: 70px;
     height: 40px;
     font-size: 15px;
-    border: 1px solid #D41E49; 
+    /* border: 1px solid #D41E49;  */
     font-weight: 500;
-    color: #D41E49;
+    color: red;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -159,34 +195,38 @@ const LogIn = styled.div`
     margin: 0px 20px; 
     
     :hover{
-        background-color: #D41E49;
-        color: white;
+        /* background-color: transparent; */
+        color: #D41E49;
+        /* border: 1px solid #D41E49;  */
     }
 `
 const SignUp = styled.div`
-    width: 90px;
+    width: 140px;
     height: 40px;
-    background-color: #D41E49;
+    /* background-color: #D41E49; */
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     border-radius: 7px;
     cursor: pointer;
     transition: all 350ms;
     
     :hover{
-        background-color: transparent;
+        /* background-color: transparent; */
         color: #D41E49;
-        border: 1px solid #D41E49; 
+        /* border: 1px solid #D41E49;  */
     }
 `
 const RightSide = styled.div`
     display: flex;
-    margin-right: 100px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
 
     @media screen and (max-width: 1154px) {
         display: none;
@@ -233,7 +273,6 @@ const Nav = styled(NavLink)`
 const NavBar = styled.div`
     width: 70%;
     margin-left: 50px;
-    cursor: pointer;
     display: flex;
     flex: 1;
 
