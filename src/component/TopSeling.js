@@ -121,6 +121,10 @@ const TopList = styled.div`
     line-height: 20px;
     margin-top: 20px;
     /* color: #fff; */
+
+       @media screen and (max-width: 500px) {
+        margin-top: 40px;
+  }
 `
 const Wrapper = styled.div`
     width: 85%;
