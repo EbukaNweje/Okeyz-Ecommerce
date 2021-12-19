@@ -7,9 +7,11 @@ import Slid3 from "../img/3.jpeg"
 import Slid4 from "../img/4.jpeg"
 import Slid5 from "../img/5.jpeg"
 import Slid6 from "../img/6.jpeg"
+import AllProductFill from "./AllProductFile"
 
 const HomeScreen = () => {
     return (
+          <Wrap>
         <Container>
             <Wrapper>
                 <TopBAnner>
@@ -18,7 +20,6 @@ const HomeScreen = () => {
                     <LinkeBanner src={Slid6}/>
                     <LinkeBanner src={Slid1}/>
                     <LinkeBanner src={Slid2}/>
-
                   </LeftSide>
                   <RightSide>
                     <Slider/>
@@ -26,10 +27,15 @@ const HomeScreen = () => {
                 </TopBAnner>
             </Wrapper>
         </Container>
+        <AllProductFill/>
+          </Wrap>
     )
 }
 
 export default HomeScreen
+const Wrap = styled.div`
+
+`
 const RightSide = styled.div`
   width: 65%;
   height: 65%;
@@ -45,11 +51,11 @@ const LinkeBanner = styled.img`
     width: 70%;
     height: 100px;
     border-radius: 10px;
-    border: 3px solid gray;
+    border: 2px solid lightgray;
     color: black;
     transition: all 350ms;
     transform: scale(1);
-    background-color: gray;
+    /* background-color: gray; */
     margin: 20px 0px;
     object-fit: cover;
 
@@ -58,9 +64,9 @@ const LinkeBanner = styled.img`
   }
 
   @media screen and (max-width: 500px) {
-  width: 30%;
-  margin: 10px 0px 0px 0px;
-  height: 80px;
+  width: 20%;
+  margin: 20px 5px 0px 5px;
+  height: 70px;
   }
 `
 const LeftSide = styled.div`
@@ -74,7 +80,7 @@ const LeftSide = styled.div`
   @media screen and (max-width: 500px) {
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     height: 30%;
     margin: 0px 0px 0px 0px;
     /* background-color: black; */
