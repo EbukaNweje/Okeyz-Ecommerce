@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import data from "./data.json"
+import data from "./data2.json"
 // import Footer from "./Footer"
 
 const TopSeling = () => {
@@ -48,6 +48,9 @@ const AddCart = styled.div`
         box-shadow: 3px 3px 7px rgba(0,0,0,0.232);
         transform: scale(1.03)
     }
+    @media screen and (max-width: 500px) {
+        height: 4vh;
+}
 
 ` 
 const CardPrice = styled.div`
@@ -74,9 +77,13 @@ const Image = styled.img`
     height: 27vh;
     background-color: #000;
     object-fit: cover;
+    border-radius: 7px 7px 0px 0px;
+    @media screen and (max-width: 500px) {
+        height: 19vh;
+}
 ` 
 const CardBody = styled.div` 
-    width: 15vw;
+    min-width: 15vw;
     height: 40vh;
     background-color: white;
     border-radius: 7px;
@@ -86,7 +93,7 @@ const CardBody = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin: 10px 10px;
     cursor: pointer;
 
@@ -96,21 +103,26 @@ const CardBody = styled.div`
     }
 
     @media screen and (max-width: 500px) {
-        width: 70vw;
+
+      min-width: 60vw;
+      height: 32vh;
         box-shadow: 3px 3px 7px rgba(0,0,0,0.232);
   }
 `
 const CardContainer = styled.div`
-    margin: 20px 10px;
+    width: 100%;
+    margin: 20px 0;
     display: flex;
-    flex-wrap: wrap;
-    height: 50vh;
+    height: 70%;
+    /* min-height: 60%; */
     /* background-color: blue; */
+    overflow-y: hidden;
 
     @media screen and (max-width: 500px) {
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 90%;
   }
     
 `
@@ -123,18 +135,25 @@ const TopList = styled.div`
     /* color: #fff; */
 
        @media screen and (max-width: 500px) {
-        margin-top: 40px;
+        margin-top: 20px;
   }
 `
 const Wrapper = styled.div`
     width: 85%;
-    height: 50vh;
+    height: 70vh;
+    /* min-height: 100%; */
     display: flex;
     flex-direction: column;
+    /* background-color: red; */
+    @media screen and (max-width: 500px) {
+        height: 45vh;
+
+  }
 `
 const Container = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 80vh;
+    /* min-height: 100%; */
     /* background-color: #000; */
     margin-top: -50px;
     display: flex;
@@ -144,5 +163,6 @@ const Container = styled.div`
 
     @media screen and (max-width: 500px) {
     margin-top: -360px;
+    height: 50vh;
   }
 `

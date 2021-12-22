@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import data from "./data.json"
+import data from "./data2.json"
 // import Footer from "./Footer"
 
 const Product = () => {
@@ -104,8 +104,9 @@ const CardContainer = styled.div`
     margin: 20px 10px;
     display: flex;
     flex-wrap: wrap;
-    height: 50vh;
-    background-color: blue;
+    /* min-height: 50vh; */
+    height: 100%;
+    /* background-color: blue; */
 
     @media screen and (max-width: 500px) {
         display: flex;
@@ -124,13 +125,13 @@ const TopList = styled.div`
 `
 const Wrapper = styled.div`
     width: 85%;
-    height: 50vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 `
 const Container = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 100%auto;
     /* background-color: #000; */
     display: flex;
     justify-content: center;
