@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import data from "./data2.json"
+import { Link } from "react-router-dom";
 // import Footer from "./Footer"
 
 const Product = () => {
@@ -11,7 +12,7 @@ const Product = () => {
                 <CardContainer>
                      {
                          data.map((props)=>(
-                        <CardBody key={props.id}>
+                        <CardBody key={props.id} to={`/Detailed/${props.id}`}>
                             <Image src={props.Image}/>
                             <CardTitle>{props.Name}</CardTitle>
                             <CardPrice>#{props.Price}</CardPrice>
@@ -75,7 +76,7 @@ const Image = styled.img`
     background-color: #000;
     object-fit: cover;
 ` 
-const CardBody = styled.div` 
+const CardBody = styled(Link)` 
     width: 15vw;
     height: 40vh;
     background-color: white;
@@ -89,6 +90,7 @@ const CardBody = styled.div`
     justify-content: center;
     margin: 10px 10px;
     cursor: pointer;
+    text-decoration: none;
 
     :hover{
         box-shadow: 3px 3px 7px rgba(0,0,0,0.232);

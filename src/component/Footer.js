@@ -182,4 +182,8 @@ const Container = styled.div`
     width: 100%;
     height: 30vh;
     background-color: black;
+
+    @media screen and (max-width: 500px) {
+      height: 50vh;
+  }
 `
